@@ -3,10 +3,12 @@
   <head>
     <!-- Metadata for the page; the title shows on the browser tab -->
     <title>Egyptian Pyramids</title>
+    <!-- Link to the stylesheet called style.css -->
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-- HEADER: page title and intro -->
-    <header>
+    <!-- HEADER: page title and intro (styled with its ID) -->
+    <header id="main_page_header">
       <h1>The Egyptian Pyramids</h1>
       <p>A look at the ancient wonders of Egypt: how they were built, why they were built, and the most famous ones still standing today.</p>
     </header>
@@ -22,35 +24,38 @@
         <!-- Image using a relative path, with alt and width attributes -->
         <img src="images/giza.jpg.png" alt="The Great Pyramid of Giza standing in the desert" width="60%" />
 
-        <!-- SECTION: groups the "famous pyramids" content -->
-        <section>
-          <h3>Most Famous Pyramids</h3>
-          <!-- Unordered list -->
-          <ul>
-            <li>Great Pyramid of Giza (Khufu)</li>
-            <li>Pyramid of Khafre</li>
-            <li>Pyramid of Menkaure</li>
-          </ul>
-        </section>
+        <!-- FLEXBOX WRAPPER: puts the two sections side by side -->
+        <div id="pyramid_wrapper">
+          <!-- SECTION: groups the "famous pyramids" content -->
+          <section id="famous" class="box">
+            <h3 class="subheader">Most Famous Pyramids</h3>
+            <!-- Unordered list -->
+            <ul>
+              <li>Great Pyramid of Giza (Khufu)</li>
+              <li>Pyramid of Khafre</li>
+              <li>Pyramid of Menkaure</li>
+            </ul>
+          </section>
 
-        <!-- SECTION: groups the "how they were built" content -->
-        <section>
-          <h3>Steps to Build a Pyramid</h3>
-          <!-- Ordered list -->
-          <ol>
-            <li>Choose and level the ground</li>
-            <li>Quarry and cut the giant stone blocks</li>
-            <li>Drag and ramp the blocks into place</li>
-            <li>Add the smooth outer casing stones</li>
-          </ol>
-        </section>
+          <!-- SECTION: groups the "how they were built" content -->
+          <section id="steps" class="box">
+            <h3 class="subheader">Steps to Build a Pyramid</h3>
+            <!-- Ordered list -->
+            <ol>
+              <li>Choose and level the ground</li>
+              <li>Quarry and cut the giant stone blocks</li>
+              <li>Drag and ramp the blocks into place</li>
+              <li>Add the smooth outer casing stones</li>
+            </ol>
+          </section>
+        </div>
 
         <p>Want to see the answers to common questions? <a href="page2.html">Read more on Page 2</a>.</p>
       </article>
     </main>
 
-    <!-- FOOTER: links to the other page -->
-    <footer>
+    <!-- FOOTER: links to the other page (styled with its ID) -->
+    <footer id="footer">
       <p><a href="page2.html">Read more on Page 2</a></p>
     </footer>
   </body>
