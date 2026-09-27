@@ -1,0 +1,127 @@
+/* ==============================
+   1. TAG STYLES
+   These rules style HTML tags on both pages.
+   ============================== */
+
+/* Sandy background color for the whole page */
+body {
+  background-color: #fdf6e3;
+  margin: 0;
+}
+
+/* Use the same clean font for every element */
+* {
+  font-family: sans-serif;
+}
+
+/* Center the big headings */
+h1,
+h2 {
+  text-align: center;
+}
+
+/* Brown color for the h2 to match the desert theme */
+h2 {
+  color: #8b5a2b;
+}
+
+/* Bigger, easier-to-read paragraphs, centered */
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Bigger list items so they are easy to read */
+li {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* Space around the main content so it is not touching the edges */
+main {
+  padding: 20px;
+}
+
+/* Center the image and give it rounded corners */
+img {
+  width: 50%;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+}
+
+/* ==============================
+   2. CLASS STYLES
+   Classes are used on more than one element.
+   ============================== */
+
+/* .box = light boxes around each section (used 3 times) */
+.box {
+  border: 1px solid #c8945a;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+/* .subheader = bold, larger titles inside each box (used 3 times) */
+.subheader {
+  font-weight: bold;
+  font-size: 22px;
+  color: #8b5a2b;
+}
+
+/* ==============================
+   3. ID STYLES
+   Each ID styles one special part of the page.
+   ============================== */
+
+/* The header: warm sand color with centered text */
+#main_page_header {
+  background-color: #e0b374;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Each section gets its own background color */
+#famous {
+  background-color: #fff3d6;
+}
+
+#steps {
+  background-color: #f6e0c1;
+}
+
+#facts {
+  background-color: #fff3d6;
+}
+
+/* The footer: dark brown so it looks different from the header */
+#footer {
+  background-color: #3b2a1a;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Light gold link so it is easy to see on the dark footer */
+#footer a {
+  color: #ffd98a;
+  font-size: 18px;
+}
+
+/* ==============================
+   4. FLEXBOX LAYOUT
+   Puts the two sections side by side on the home page.
+   ============================== */
+
+/* Turn the wrapper into a flex container with space between items */
+#pyramid_wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/* Each section takes up equal space in the row */
+#famous,
+#steps {
+  flex: 1;
+}
