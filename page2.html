@@ -1,25 +1,39 @@
+
+
+Page2 · HTML
 <!DOCTYPE html>
-<html>
+<!-- lang="en" tells screen readers the page is in English -->
+<html lang="en">
   <head>
-    <title>Pyramid Facts & FAQ</title>
+    <meta charset="UTF-8" />
+    <!-- Makes the page fit phone screens so the media query works -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pyramid Facts &amp; FAQ</title>
     <!-- Link to the stylesheet called style.css -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-- HEADER: page title and intro (styled with its ID) -->
+    <!-- HEADER: page title, intro, and site navigation -->
     <header id="main_page_header">
+      <!-- Only ONE h1 per page -->
       <h1>Pyramid Facts &amp; FAQ</h1>
       <p>Some quick answers to the questions people ask most about the Egyptian pyramids.</p>
+      <!-- NAV: a landmark that holds the site's main links -->
+      <nav>
+        <a href="index.html">Pyramids home page</a>
+        <a href="page2.html">Pyramid facts and FAQ page</a>
+      </nav>
     </header>
-
+ 
     <!-- MAIN: central content, at least two paragraphs -->
     <main>
       <article>
+        <!-- h2 comes right after h1 (no skipped levels) -->
         <h2>Frequently Asked Questions</h2>
         <p>People have been fascinated by the pyramids for thousands of years. Here are answers to a few of the most common questions.</p>
         <p>Despite many myths, historians agree the pyramids were built by skilled paid workers, not slaves, who lived in nearby villages.</p>
-
-        <!-- SECTION groups the FAQ list -->
+ 
+        <!-- SECTION groups the FAQ list (h3 after h2) -->
         <section id="facts" class="box">
           <h3 class="subheader">Quick Facts</h3>
           <ul>
@@ -30,10 +44,11 @@
         </section>
       </article>
     </main>
-
-    <!-- FOOTER: links back to the home page (styled with its ID) -->
+ 
+    <!-- FOOTER: meaningful link back to the home page instead of "Back to Home" -->
     <footer id="footer">
-      <p><a href="index.html">Back to Home</a></p>
+      <p><a href="index.html">Go back to the Egyptian Pyramids home page</a></p>
     </footer>
   </body>
 </html>
+ 
