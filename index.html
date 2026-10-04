@@ -1,32 +1,43 @@
 <!DOCTYPE html>
-<html>
+<!-- lang="en" tells screen readers the page is in English -->
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the page fit phone screens so the media query works -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Metadata for the page; the title shows on the browser tab -->
     <title>Egyptian Pyramids</title>
     <!-- Link to the stylesheet called style.css -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-- HEADER: page title and intro (styled with its ID) -->
+    <!-- HEADER: page title, intro, and site navigation -->
     <header id="main_page_header">
+      <!-- Only ONE h1 per page -->
       <h1>The Egyptian Pyramids</h1>
       <p>A look at the ancient wonders of Egypt: how they were built, why they were built, and the most famous ones still standing today.</p>
+      <!-- NAV: a landmark that holds the site's main links -->
+      <nav>
+        <a href="index.html">Pyramids home page</a>
+        <a href="page2.html">Pyramid facts and FAQ page</a>
+      </nav>
     </header>
 
     <!-- MAIN: the central content of the page -->
     <main>
       <!-- ARTICLE: a standalone block about the pyramids -->
       <article>
+        <!-- h2 comes right after h1 (no skipped levels) -->
         <h2>What Are the Pyramids?</h2>
         <p>The Egyptian pyramids are massive stone structures built as tombs for pharaohs and their queens. Most were constructed during the Old and Middle Kingdom periods, over 4,000 years ago.</p>
         <p>The largest and most famous is the Great Pyramid of Giza, built for the pharaoh Khufu. It was the tallest human-made structure in the world for nearly 4,000 years.</p>
 
-        <!-- Image using a relative path, with alt and width attributes -->
-        <img src="images/giza.jpg.png" alt="The Great Pyramid of Giza standing in the desert" width="60%" />
+        <!-- Descriptive alt text: says what is actually in the picture -->
+        <img src="images/giza.jpg.png" alt="The Great Pyramid of Giza, a huge stone pyramid standing in the sandy desert" width="60%" />
 
         <!-- FLEXBOX WRAPPER: puts the two sections side by side -->
         <div id="pyramid_wrapper">
-          <!-- SECTION: groups the "famous pyramids" content -->
+          <!-- SECTION: groups the "famous pyramids" content (h3 after h2) -->
           <section id="famous" class="box">
             <h3 class="subheader">Most Famous Pyramids</h3>
             <!-- Unordered list -->
@@ -37,7 +48,7 @@
             </ul>
           </section>
 
-          <!-- SECTION: groups the "how they were built" content -->
+          <!-- SECTION: groups the "how they were built" content (h3 after h2) -->
           <section id="steps" class="box">
             <h3 class="subheader">Steps to Build a Pyramid</h3>
             <!-- Ordered list -->
@@ -50,13 +61,14 @@
           </section>
         </div>
 
-        <p>Want to see the answers to common questions? <a href="page2.html">Read more on Page 2</a>.</p>
+        <!-- Meaningful link text instead of "Read more on Page 2" -->
+        <p>Want to see the answers to common questions? <a href="page2.html">Read the pyramid facts and FAQ</a>.</p>
       </article>
     </main>
 
-    <!-- FOOTER: links to the other page (styled with its ID) -->
+    <!-- FOOTER: meaningful link to the other page (styled with its ID) -->
     <footer id="footer">
-      <p><a href="page2.html">Read more on Page 2</a></p>
+      <p><a href="page2.html">Go to the pyramid facts and FAQ page</a></p>
     </footer>
   </body>
 </html>
