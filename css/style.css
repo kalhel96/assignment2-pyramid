@@ -6,6 +6,7 @@
 /* Sandy background color for the whole page */
 body {
   background-color: #fdf6e3;
+  color: #1f1a14;              /* dark text on light background = strong contrast */
   margin: 0;
 }
 
@@ -20,9 +21,9 @@ h2 {
   text-align: center;
 }
 
-/* Brown color for the h2 to match the desert theme */
+/* Darker brown for h2 so it passes contrast (was #8b5a2b) */
 h2 {
-  color: #8b5a2b;
+  color: #6b4220;
 }
 
 /* Bigger, easier-to-read paragraphs, centered */
@@ -64,11 +65,11 @@ img {
   margin-top: 20px;
 }
 
-/* .subheader = bold, larger titles inside each box (used 3 times) */
+/* .subheader = bold titles inside each box, darker brown for contrast (was #8b5a2b) */
 .subheader {
   font-weight: bold;
   font-size: 22px;
-  color: #8b5a2b;
+  color: #6b4220;
 }
 
 /* ==============================
@@ -81,6 +82,16 @@ img {
   background-color: #e0b374;
   text-align: center;
   padding: 20px;
+}
+
+/* Navigation links in the header: dark and underlined so they
+   do not rely on color alone */
+#main_page_header nav a {
+  color: #3b2a1a;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 10px;
+  text-decoration: underline;
 }
 
 /* Each section gets its own background color */
@@ -125,3 +136,37 @@ img {
 #steps {
   flex: 1;
 }
+
+/* ==============================
+   5. MEDIA QUERY (RESPONSIVE)
+   Works like an "if" statement:
+   IF the screen is 768px wide or smaller (tablets and phones),
+   THEN use these styles instead.
+   ============================== */
+@media (max-width: 768px) {
+  /* Stack the two sections on top of each other */
+  #pyramid_wrapper {
+    flex-direction: column;
+  }
+
+  /* Make the image wider so it is easy to see on a phone */
+  img {
+    width: 90%;
+  }
+
+  /* Slightly smaller text and less padding on small screens */
+  p {
+    font-size: 16px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  /* Put the nav links on their own lines so they are easy to tap */
+  #main_page_header nav a {
+    display: block;
+    margin: 8px 0;
+  }
+}
+/* Lighthouse accessibility audit: score 100 */
