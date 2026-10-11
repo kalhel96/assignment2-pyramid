@@ -1,37 +1,30 @@
 /* ==============================
    1. TAG STYLES
-   These rules style HTML tags on both pages.
+   Bootstrap handles most spacing and layout now.
+   These rules keep my own colors and fonts.
    ============================== */
 
-/* Sandy background color for the whole page */
+/* Sandy background color for the whole page (my own color, Bootstrap doesn't have this) */
 body {
   background-color: #fdf6e3;
-  color: #1f1a14;              /* dark text on light background = strong contrast */
-  margin: 0;
+  color: #1f1a14; /* dark text on light background = strong contrast */
 }
 
-/* Use the same clean font for every element */
-* {
-  font-family: sans-serif;
-}
+/* REMOVED: body { margin: 0; } - Bootstrap already resets the body margin */
+/* REMOVED: * { font-family: sans-serif; } - Bootstrap already sets a clean font */
 
-/* Center the big headings */
-h1,
+/* Center the h2 headings */
 h2 {
   text-align: center;
+  color: #6b4220; /* darker brown so it passes contrast */
 }
 
-/* Darker brown for h2 so it passes contrast (was #8b5a2b) */
-h2 {
-  color: #6b4220;
-}
-
-/* Bigger, easier-to-read paragraphs, centered */
+/* Bigger, easier-to-read paragraphs */
 p {
   font-size: 18px;
   line-height: 1.5;
-  text-align: center;
 }
+/* REMOVED: text-align: center on p - now done with Bootstrap's text-center class */
 
 /* Bigger list items so they are easy to read */
 li {
@@ -39,33 +32,37 @@ li {
   line-height: 1.6;
 }
 
-/* Space around the main content so it is not touching the edges */
-main {
-  padding: 20px;
-}
+/* REMOVED: main { padding: 20px; } - Bootstrap's container class handles this */
 
 /* Center the image and give it rounded corners */
 img {
   width: 50%;
   border-radius: 8px;
   display: block;
-  margin: auto;
+  margin: 0 auto 20px auto;
 }
 
 /* ==============================
    2. CLASS STYLES
-   Classes are used on more than one element.
    ============================== */
 
-/* .box = light boxes around each section (used 3 times) */
+/* My own custom heading font and color (Bootstrap doesn't give me this) */
+.my-custom-heading {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: #3b2a1a;
+}
+
+/* .box = light boxes around each section with a custom border */
 .box {
   border: 1px solid #c8945a;
   border-radius: 8px;
   padding: 10px 20px;
-  margin-top: 20px;
+  height: 100%; /* makes the two side-by-side boxes the same height */
 }
+/* REMOVED: margin-top: 20px - now done with Bootstrap's mb-4 class */
 
-/* .subheader = bold titles inside each box, darker brown for contrast (was #8b5a2b) */
+/* .subheader = bold titles inside each box */
 .subheader {
   font-weight: bold;
   font-size: 22px;
@@ -74,25 +71,16 @@ img {
 
 /* ==============================
    3. ID STYLES
-   Each ID styles one special part of the page.
    ============================== */
 
-/* The header: warm sand color with centered text */
+/* The header: warm sand color */
 #main_page_header {
   background-color: #e0b374;
-  text-align: center;
   padding: 20px;
 }
+/* REMOVED: text-align: center - now done with Bootstrap's text-center class */
 
-/* Navigation links in the header: dark and underlined so they
-   do not rely on color alone */
-#main_page_header nav a {
-  color: #3b2a1a;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0 10px;
-  text-decoration: underline;
-}
+/* REMOVED: #main_page_header nav a { ... } - the nav links are Bootstrap buttons now */
 
 /* Each section gets its own background color */
 #famous {
@@ -110,63 +98,36 @@ img {
 /* The footer: dark brown so it looks different from the header */
 #footer {
   background-color: #3b2a1a;
-  text-align: center;
   padding: 15px;
 }
-
-/* Light gold link so it is easy to see on the dark footer */
-#footer a {
-  color: #ffd98a;
-  font-size: 18px;
-}
+/* REMOVED: #footer a { ... } - the footer link is a Bootstrap button now */
 
 /* ==============================
-   4. FLEXBOX LAYOUT
-   Puts the two sections side by side on the home page.
+   4. FLEXBOX LAYOUT - REMOVED
+   #pyramid_wrapper { display: flex; gap: 20px; }
+   #famous, #steps { flex: 1; }
+   Replaced with Bootstrap's grid (row + col-md-6).
    ============================== */
-
-/* Turn the wrapper into a flex container with space between items */
-#pyramid_wrapper {
-  display: flex;
-  gap: 20px;
-}
-
-/* Each section takes up equal space in the row */
-#famous,
-#steps {
-  flex: 1;
-}
 
 /* ==============================
    5. MEDIA QUERY (RESPONSIVE)
-   Works like an "if" statement:
-   IF the screen is 768px wide or smaller (tablets and phones),
-   THEN use these styles instead.
+   The grid already stacks on small screens (col-md-6),
+   so I only keep the image and text tweaks.
    ============================== */
 @media (max-width: 768px) {
-  /* Stack the two sections on top of each other */
-  #pyramid_wrapper {
-    flex-direction: column;
-  }
-
   /* Make the image wider so it is easy to see on a phone */
   img {
     width: 90%;
   }
 
-  /* Slightly smaller text and less padding on small screens */
+  /* Slightly smaller text on small screens */
   p {
     font-size: 16px;
   }
 
-  main {
-    padding: 10px;
-  }
-
-  /* Put the nav links on their own lines so they are easy to tap */
-  #main_page_header nav a {
-    display: block;
-    margin: 8px 0;
+  /* Stack the nav buttons so they are easy to tap */
+  nav {
+    flex-direction: column;
+    align-items: center;
   }
 }
-/* Lighthouse accessibility audit: score 100 */
