@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <!-- lang="en" tells screen readers the page is in English -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Makes the page fit phone screens so the media query works -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Metadata for the page; the title shows on the browser tab -->
-    <title>Egyptian Pyramids</title>
-    <!-- Link to the stylesheet called style.css -->
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <!-- HEADER: page title, intro, and site navigation -->
-    <header id="main_page_header">
-      <!-- Only ONE h1 per page -->
-      <h1>The Egyptian Pyramids</h1>
-      <p>A look at the ancient wonders of Egypt: how they were built, why they were built, and the most famous ones still standing today.</p>
-      <!-- NAV: a landmark that holds the site's main links -->
-      <nav>
-        <a href="index.html">Pyramids home page</a>
-        <a href="page2.html">Pyramid facts and FAQ page</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes the page fit phone screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Metadata for the page; the title shows on the browser tab -->
+  <title>Egyptian Pyramids</title>
 
-    <!-- MAIN: the central content of the page -->
-    <main>
-      <!-- ARTICLE: a standalone block about the pyramids -->
-      <article>
-        <!-- h2 comes right after h1 (no skipped levels) -->
-        <h2>What Are the Pyramids?</h2>
-        <p>The Egyptian pyramids are massive stone structures built as tombs for pharaohs and their queens. Most were constructed during the Old and Middle Kingdom periods, over 4,000 years ago.</p>
-        <p>The largest and most famous is the Great Pyramid of Giza, built for the pharaoh Khufu. It was the tallest human-made structure in the world for nearly 4,000 years.</p>
+  <!-- Link to Bootstrap (must come BEFORE style.css so my styles can override it) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous">
 
-        <!-- Descriptive alt text: says what is actually in the picture -->
-        <img src="images/giza.jpg.png" alt="The Great Pyramid of Giza, a huge stone pyramid standing in the sandy desert" width="60%" />
+  <!-- Link to my custom stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <!-- HEADER: page title, intro, and site navigation -->
+  <!-- Bootstrap: text-center centers the text, mb-4 adds space below -->
+  <header id="main_page_header" class="text-center mb-4">
+    <!-- Only ONE h1 per page; my-custom-heading is my own style -->
+    <h1 class="my-custom-heading">The Egyptian Pyramids</h1>
+    <!-- Bootstrap: lead gives the paragraph a slightly larger font -->
+    <p class="lead">A look at the ancient wonders of Egypt: how they were built, why they were built, and the most famous ones still standing today.</p>
 
-        <!-- FLEXBOX WRAPPER: puts the two sections side by side -->
-        <div id="pyramid_wrapper">
-          <!-- SECTION: groups the "famous pyramids" content (h3 after h2) -->
-          <section id="famous" class="box">
+    <!-- NAV: Bootstrap d-flex + justify-content-center + gap-3 lines up and spaces the links -->
+    <nav class="d-flex justify-content-center gap-3">
+      <!-- Bootstrap: btn btn-dark turns the links into dark buttons -->
+      <a href="index.html" class="btn btn-dark">Pyramids home page</a>
+      <a href="page2.html" class="btn btn-dark">Pyramid facts and FAQ page</a>
+    </nav>
+  </header>
+
+  <!-- MAIN: the central content of the page -->
+  <!-- Bootstrap: container centers the content and sets a max width, mt-4 adds top margin -->
+  <main class="container mt-4">
+    <!-- ARTICLE: a standalone block about the pyramids -->
+    <article>
+      <!-- h2 comes right after h1 (no skipped levels) -->
+      <h2>What Are the Pyramids?</h2>
+      <p class="text-center">The Egyptian pyramids are massive stone structures built as tombs for pharaohs and their queens. Most were constructed during the Old and Middle Kingdom periods, over 4,000 years ago.</p>
+      <p class="text-center">The largest and most famous is the Great Pyramid of Giza, built for the pharaoh Khufu. It was the tallest human-made structure in the world for nearly 4,000 years.</p>
+
+      <!-- Descriptive alt text: says what is actually in the picture -->
+      <img src="images/giza.jpg.png" alt="The Great Pyramid of Giza, a huge stone pyramid standing in the sandy desert" />
+
+      <!-- Bootstrap GRID: row + col-md-6 puts the two sections side by side
+           (replaces my old flexbox wrapper). On phones they stack automatically. -->
+      <div class="row">
+        <!-- SECTION: groups the "famous pyramids" content (h3 after h2) -->
+        <section class="col-md-6 mb-4">
+          <div id="famous" class="box">
             <h3 class="subheader">Most Famous Pyramids</h3>
             <!-- Unordered list -->
             <ul>
@@ -46,10 +61,12 @@
               <li>Pyramid of Khafre</li>
               <li>Pyramid of Menkaure</li>
             </ul>
-          </section>
+          </div>
+        </section>
 
-          <!-- SECTION: groups the "how they were built" content (h3 after h2) -->
-          <section id="steps" class="box">
+        <!-- SECTION: groups the "how they were built" content (h3 after h2) -->
+        <section class="col-md-6 mb-4">
+          <div id="steps" class="box">
             <h3 class="subheader">Steps to Build a Pyramid</h3>
             <!-- Ordered list -->
             <ol>
@@ -58,17 +75,21 @@
               <li>Drag and ramp the blocks into place</li>
               <li>Add the smooth outer casing stones</li>
             </ol>
-          </section>
-        </div>
+          </div>
+        </section>
+      </div>
 
-        <!-- Meaningful link text instead of "Read more on Page 2" -->
-        <p>Want to see the answers to common questions? <a href="page2.html">Read the pyramid facts and FAQ</a>.</p>
-      </article>
-    </main>
+      <!-- Bootstrap: btn btn-primary turns the link into a blue button -->
+      <p class="text-center">Want to see the answers to common questions?
+        <a href="page2.html" class="btn btn-primary">Read the pyramid facts and FAQ</a>
+      </p>
+    </article>
+  </main>
 
-    <!-- FOOTER: meaningful link to the other page (styled with its ID) -->
-    <footer id="footer">
-      <p><a href="page2.html">Go to the pyramid facts and FAQ page</a></p>
-    </footer>
-  </body>
+  <!-- FOOTER: Bootstrap mt-5 adds space above, text-center centers it -->
+  <footer id="footer" class="mt-5 text-center">
+    <!-- Bootstrap: btn btn-warning makes a gold button that stands out on the dark footer -->
+    <a href="page2.html" class="btn btn-warning">Go to the pyramid facts and FAQ page</a>
+  </footer>
+</body>
 </html>
